@@ -35,6 +35,7 @@ const Avatar = (props: AvatarProps) => {
         />
     );
 }
+const ThemeContext = React.createContext<string>('');
 const Card = (props: { children: JSX.Element }) => {
     const theme = React.useContext(ThemeContext);
     return (
@@ -57,7 +58,6 @@ const List = () => {
     );
     return <ul className={`${theme}`}>{listItems}</ul>;
 }
-const ThemeContext = React.createContext<string>('');
 export default class Hello extends React.Component<Props, object> {
     render() {
         const { name, enthusiasmLevel = 1 } = this.props;
